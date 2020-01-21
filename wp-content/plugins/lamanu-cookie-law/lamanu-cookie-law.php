@@ -47,13 +47,13 @@ function addScript() {
         tarteaucitron.user.analyticsMore = function () { /* add here your optionnal ga.push() */ };
         (tarteaucitron.job = tarteaucitron.job || []).push('analytics');
     </script>
-
 <?php }
 
 // à comprendre : 
 add_action('admin_menu', 'plugin_setup_menu');
 function plugin_setup_menu() {
-    add_menu_page('Gestion de cookie', 'Cookie', 'manage_options', 'cookie-plugin', 'setup_init');
+  // add_menu_page($page_title , $menu_title , $capacity_display , $name_to_refer_to_menu , $function_to_call(optional))
+  add_menu_page('Gestion de cookie', 'Cookie', 'manage_options', 'cookie-plugin', 'setup_init');
 }
 function setup_init() {
     include_once 'view/option.php';
